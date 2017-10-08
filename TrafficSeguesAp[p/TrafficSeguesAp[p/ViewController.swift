@@ -14,6 +14,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    @IBOutlet weak var textField: UITextField!
+    
     @IBAction func unwindToRed(unwindSegue : UIStoryboardSegue){
         
     }
@@ -23,6 +25,8 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        segue.destination.title = textField.text;
+    }
 }
 
